@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/619890c366.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="notification"></div>
+    <div class="todoApp">
+      <!-- Heading of the Project  -->
+      <header class="heading">
+        <i class="fa-solid fa-clipboard-list" class="todoIcon"></i>
+        Write down all your Daily Activities...
+      </header>
+
+      <!-- Input component -->
+      <Form class="addTodo" action="/addTodo" method="POST">
+        <input
+          type="text"
+          placeholder="Write you daily tasks"
+          id="todoText"
+          name="text"
+        />
+        <div class="addBtn">
+          <button type="submit">
+            <i class="fa-solid fa-circle-plus fa-2x add" id="add"> </i>
+          </button>
+        </div>
+      </Form>
+
+      <div class="todoItems">
+        <% results.map(item => { %>
+        <div class="items">
+          <div>
+            <input type="checkbox" name="checkBox_item" />
+            <span id="todo-id"><%= item.text %></span>
+          </div>
+          <a href="/deleteTodo/?id=<%=item._id%>">
+            <i class="fa-solid fa-trash fa-2x" name="fa-icons"></i>
+          </a>
+        </div>
+        ` <% }) %>
+      </div>
+    </div>
+    <script type="text/javascript" src="./style.js"></script>
+  </body>
+</html>
